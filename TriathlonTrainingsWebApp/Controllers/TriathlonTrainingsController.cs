@@ -15,13 +15,11 @@ namespace TriathlonTrainingsWebApp.Controllers
     {
         private TriathlonContext db = new TriathlonContext();
 
-        // GET: TriathlonTrainings
+     
         public async Task<ActionResult> Index()
         {
             return View(await db.TriathlonActivities.ToListAsync());
         }
-
-        // GET: TriathlonTrainings/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,15 +34,12 @@ namespace TriathlonTrainingsWebApp.Controllers
             return View(triathlonTraining);
         }
 
-        // GET: TriathlonTrainings/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: TriathlonTrainings/Create
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. 
-        // Дополнительные сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Distance,Duration,Speed,Pace,CurrentDate,KindOfSports")] TriathlonTraining triathlonTraining)
@@ -56,7 +51,7 @@ namespace TriathlonTrainingsWebApp.Controllers
                 CountPace(triathlonTraining);
                 db.TriathlonActivities.Add(triathlonTraining);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("TrainingOverwiew", "GeneralTrainingOverwiew");
             }
 
             return View(triathlonTraining);
@@ -72,7 +67,7 @@ namespace TriathlonTrainingsWebApp.Controllers
             return triathlonTraining.Pace;
         }
 
-        // GET: TriathlonTrainings1/Edit/5
+     
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,9 +82,7 @@ namespace TriathlonTrainingsWebApp.Controllers
             return View(triathlonTraining);
         }
 
-        // POST: TriathlonTrainings/Edit/5
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. 
-        // Дополнительные сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Distance,Duration,Speed,Pace,CurrentDate,KindOfSports")] TriathlonTraining triathlonTraining)
@@ -103,7 +96,7 @@ namespace TriathlonTrainingsWebApp.Controllers
             return View(triathlonTraining);
         }
 
-        // GET: TriathlonTrainings/Delete/5
+      
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -118,7 +111,7 @@ namespace TriathlonTrainingsWebApp.Controllers
             return View(triathlonTraining);
         }
 
-        // POST: TriathlonTrainings/Delete/5
+     
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)

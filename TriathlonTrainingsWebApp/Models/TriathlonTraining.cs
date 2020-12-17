@@ -1,10 +1,14 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TriathlonTrainingsWebApp.Models
 {
     public class TriathlonTraining
     {
         public int Id { get; set; }
+        [Required]
+        //[Range((0.5), 1000, ErrorMessage = "Amount should be in range {1} to {2}.")]
+        //[RegularExpression(@"\d", ErrorMessage = "Amount is not valid.")]
         public double Distance { get; set; }
         public double Duration { get; set; }
         public double? Speed { get; set; }
