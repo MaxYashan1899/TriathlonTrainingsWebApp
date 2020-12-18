@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using TriathlonTrainingsWebApp.Models;
 
@@ -58,12 +54,12 @@ namespace TriathlonTrainingsWebApp.Controllers
         }
         private double? CountSpeed(TriathlonTraining triathlonTraining)
         {
-            triathlonTraining.Speed = Math.Round((triathlonTraining.Distance / (triathlonTraining.Duration / 60)), 2);
+            triathlonTraining.Speed = Math.Round(((double)(triathlonTraining.Distance / (triathlonTraining.Duration / 60))), 2);
             return triathlonTraining.Speed;
         }
         private double? CountPace(TriathlonTraining triathlonTraining)
         {
-            triathlonTraining.Pace = Math.Round((60 / (triathlonTraining.Distance / (triathlonTraining.Duration / 60))), 2);
+            triathlonTraining.Pace = Math.Round(((double)(60 / (triathlonTraining.Distance / (triathlonTraining.Duration / 60)))), 2);
             return triathlonTraining.Pace;
         }
 

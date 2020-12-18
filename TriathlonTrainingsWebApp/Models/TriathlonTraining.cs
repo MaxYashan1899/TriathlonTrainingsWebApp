@@ -7,9 +7,10 @@ namespace TriathlonTrainingsWebApp.Models
     {
         public int Id { get; set; }
         [Required]
-        //[Range((0.5), 1000, ErrorMessage = "Amount should be in range {1} to {2}.")]
-        //[RegularExpression(@"\d", ErrorMessage = "Amount is not valid.")]
+        [Range(1, 1000)]
         public double Distance { get; set; }
+        [Required]
+        [Range(1, 5000)]
         public double Duration { get; set; }
         public double? Speed { get; set; }
         public double? Pace { get; set; }
