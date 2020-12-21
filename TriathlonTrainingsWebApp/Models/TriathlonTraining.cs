@@ -8,10 +8,10 @@ namespace TriathlonTrainingsWebApp.Models
         public int Id { get; set; }
         [Required]
         [Range(1, 1000)]
-        public double Distance { get; set; }
+        public double? Distance { get; set; }
         [Required]
         [Range(1, 5000)]
-        public double Duration { get; set; }
+        public double? Duration { get; set; }
         public double? Speed { get; set; }
         public double? Pace { get; set; }
         public DateTime CurrentDate { get; set; }

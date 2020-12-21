@@ -24,11 +24,10 @@
             @Html.ValidationMessageFor(model => model.KindOfSports, "", new { @class = "text-danger" })
         </div>
     </div>
-    @*// !!!!!!!!!!!!!!!! Ошибка в валидации must be a number.*@
     <div class="form-group">
-        @Html.LabelFor(model => model.Distance, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Distance, htmlAttributes: new { @class = "control-label col-md-2" }) 
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Distance, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Distance, new { htmlAttributes = new { @class = "form-control" } }) 
             @Html.ValidationMessageFor(model => model.Distance, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -79,7 +78,7 @@
 }
 
 <div>
-    @Html.ActionLink("Training overwiew", "TrainingOverwiew", "GeneralTrainingOverwiew")
+    @Html.ActionLink("All training list", "Index", "TriathlonTrainings")
 </div>
 
 @section Scripts {

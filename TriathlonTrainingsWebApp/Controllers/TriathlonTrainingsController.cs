@@ -4,17 +4,33 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web.Mvc;
 using TriathlonTrainingsWebApp.Models;
+using System.Linq;
 
 namespace TriathlonTrainingsWebApp.Controllers
 {
+    [Authorize]
     public class TriathlonTrainingsController : Controller
     {
         private TriathlonContext db = new TriathlonContext();
 
      
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> AllTrainingsList()
         {
             return View(await db.TriathlonActivities.ToListAsync());
+        }
+        public async Task<ActionResult> KindOfSport(int? distance)
+        {
+            if (distance == null)
+            {
+                return HttpNotFound();
+            }
+            TriathlonTraining kindOfActivity = await db.TriathlonActivities.FirstOrDefaultAsync(n => n.Distance < distance);
+
+            if (kindOfActivity == null)
+            {
+                return HttpNotFound();
+            }
+            return View(kindOfActivity);
         }
         public async Task<ActionResult> Details(int? id)
         {
@@ -87,7 +103,7 @@ namespace TriathlonTrainingsWebApp.Controllers
             {
                 db.Entry(triathlonTraining).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("AllTrainingsList");
             }
             return View(triathlonTraining);
         }
@@ -115,7 +131,7 @@ namespace TriathlonTrainingsWebApp.Controllers
             TriathlonTraining triathlonTraining = await db.TriathlonActivities.FindAsync(id);
             db.TriathlonActivities.Remove(triathlonTraining);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("AllTrainingsList");
         }
         protected override void Dispose(bool disposing)
         {

@@ -183,6 +183,10 @@
     <Compile Include="Migrations\202012181606048_MigrateDB1.Designer.cs">
       <DependentUpon>202012181606048_MigrateDB1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012181644083_MigrateDB2.cs" />
+    <Compile Include="Migrations\202012181644083_MigrateDB2.Designer.cs">
+      <DependentUpon>202012181644083_MigrateDB2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Helper.cs" />
@@ -252,7 +256,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\TriathlonTrainings\Create.cshtml" />
     <Content Include="Views\TriathlonTrainings\Details.cshtml" />
-    <Content Include="Views\TriathlonTrainings\Index.cshtml" />
+    <Content Include="Views\TriathlonTrainings\AllTrainingsList.cshtml" />
     <Content Include="Views\TriathlonTrainings\Edit.cshtml" />
     <Content Include="Views\TriathlonTrainings\Delete.cshtml" />
     <Content Include="Views\GeneralTrainingOverwiew\Create.cshtml" />
@@ -262,9 +266,11 @@
     <Content Include="Views\GeneralTrainingOverwiew\TrainingOverwiew.cshtml" />
     <Content Include="Views\GeneralTrainingOverwiew\TrainingOverwiew7Days.cshtml" />
     <Content Include="Views\GeneralTrainingOverwiew\TrainingOverwiew30Days.cshtml" />
+    <Content Include="Views\TriathlonTrainings\KindOfSport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012181606048_MigrateDB1.resx">
       <DependentUpon>202012181606048_MigrateDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012181644083_MigrateDB2.resx">
+      <DependentUpon>202012181644083_MigrateDB2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

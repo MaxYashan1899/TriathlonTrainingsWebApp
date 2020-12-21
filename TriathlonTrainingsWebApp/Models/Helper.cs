@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
 
 namespace TriathlonTrainingsWebApp.Models
 {
     public class Helper
     {
-        // 1. Одна база триатлон + дискриминаторы
-        // 2. Связивание таблиц
-        // 3. Три свойства в классе триатлон
+
+
+
+
+        // 1. Home page (trithlon photo) + заголовок + регистрация
+        // 2. Выбор списка тренировок по виду спорта
+        // 3. Сравнение результатов по месяцам
+        // 4. Перевод текста при реестрации на английский
 
         //public class User
         //{

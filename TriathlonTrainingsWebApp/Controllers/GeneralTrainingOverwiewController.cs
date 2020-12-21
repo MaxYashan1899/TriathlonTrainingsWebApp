@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Data.Entity;
 using System.Threading.Tasks;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using TriathlonTrainingsWebApp.Models;
 
 namespace TriathlonTrainingsWebApp.Controllers
 {
+    [Authorize]
     public class GeneralTrainingOverwiewController : Controller
     {
         private TriathlonContext db = new TriathlonContext();
