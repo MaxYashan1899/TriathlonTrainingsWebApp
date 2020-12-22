@@ -8,10 +8,9 @@ namespace TriathlonTrainingsWebApp.Models
 
 
 
-        // 1. Home page (trithlon photo) + заголовок + регистрация
         // 2. Выбор списка тренировок по виду спорта
         // 3. Сравнение результатов по месяцам
-        // 4. Перевод текста при реестрации на английский
+
 
         //public class User
         //{
