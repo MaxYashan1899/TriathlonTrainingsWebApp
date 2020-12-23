@@ -3,24 +3,29 @@
 @{
     ViewBag.Title = "TrainingOverwiew";
 }
-
     <h2 style="text-align:center">General training overwiew</h2>
     <br/> <br/> <p>
-    <span style="font-weight:bold; font-size:22px; color: gray;margin-left: 10px;">
-    @Model.Count()  MOVES </span>
+    <span style="font-weight:bold; font-size:22px; color: gray; margin-left: 10px;">
+          @Model.Count()  MOVES 
+    </span>
     <span style="font-weight:bold; font-size:22px; color: gray; margin-left: 50px;">
-    @Model.Sum(m => m.Duration) MIN</span>
-    <span style=" margin-left: 105px; border: 1px solid gray; border-radius: 25px;padding: 5px 40px; background: #f3dbdf;"> 
-    @Html.ActionLink("Total", "TrainingOverwiew", "GeneralTrainingOverwiew")</span>
-    <span style=" margin-left: 30px;border: 1px solid gray; border-radius: 25px; padding: 5px 20px; background: #f3dbdf;">
-    @Html.ActionLink("Last 30 days", "TrainingOverwiew30Days", "GeneralTrainingOverwiew")</span>
-    <span style="margin-left: 30px;border: 1px solid gray; border-radius: 25px;padding: 5px 20px;background: #f3dbdf;">
-    @Html.ActionLink("Last 7 days", "TrainingOverwiew7Days", "GeneralTrainingOverwiew")</span>
+          @Model.Sum(m => m.Duration) MIN
+    </span>
+    <span style=" margin-left: 105px; border: 1px solid gray; border-radius: 25px; padding: 5px 40px; background: #f3dbdf;"> 
+          @Html.ActionLink("Total", "TrainingOverwiew", "GeneralTrainingOverwiew")
+    </span>
+    <span style=" margin-left: 30px; border: 1px solid gray; border-radius: 25px; padding: 5px 20px; background: #f3dbdf;">
+          @Html.ActionLink("Last 30 days", "TrainingOverwiew30Days", "GeneralTrainingOverwiew")
+    </span>
+    <span style="margin-left: 30px; border: 1px solid gray; border-radius: 25px; padding: 5px 20px; background: #f3dbdf;">
+          @Html.ActionLink("Last 7 days", "TrainingOverwiew7Days", "GeneralTrainingOverwiew")
+    </span>
     <span style="font-weight:bold; font-size:22px; color: gray; float: right;">
-    @Model.Sum(m => m.Distance) KM</span>
+          @Model.Sum(m => m.Distance) KM
+    </span>
     </p>
 <br/><br /><br /><br />
-                 <table class="table" style="text-align:center; color:red; font-weight:bold">
+                 <table class="table" style="text-align:center; font-weight:bold">
                      <tr style="color:forestgreen">
                          <th>
                              <h5></h5>
@@ -30,9 +35,7 @@
                          </th>
                          <th>
                              <h5 style="text-align:center;font-weight:bold">Total duration(min)</h5>
-                         </th>
-                         <td>
-                         </td>
+                         </th> <td> </td>
                          <th>
                              <h5 style="text-align: center;font-weight:bold">Max distance(km)</h5>
                          </th>
@@ -52,9 +55,7 @@
                          </td>
                          <td>
                              @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Running).Sum(p => p.Duration)
-                         </td>
-                         <td>
-                         </td>
+                         </td> <td></td>
                          <td>
                              @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Running).Max(p => p.Distance)
                          </td>
@@ -74,9 +75,7 @@
                          </td>
                          <td>
                              @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Bicycle).Sum(p => p.Duration)
-                         </td>
-                         <td>
-                         </td>
+                         </td> <td></td>
                          <td>
                              @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Bicycle).Max(p => p.Distance)
                          </td>
@@ -96,9 +95,7 @@
                          </td>
                          <td>
                              @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Swimming).Sum(p => p.Duration)
-                         </td>
-                         <td>
-                         </td>
+                         </td> <td> </td>
                          <td>
                              @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Swimming).Max(p => p.Distance)
                          </td>

@@ -7,21 +7,27 @@
 <h2 style="text-align:center"> 30 days training overwiew</h2>
 <br />
 <br /> <p>
-    <span style="font-weight:bold; font-size:22px; color: gray;margin-left: 10px;">@Model.Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Count()  MOVES </span>
-    <span style="font-weight:bold; font-size:22px; color: gray; margin-left: 50px;">@Model.Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Sum(m => m.Duration) MIN</span>
-    <span style=" margin-left: 105px;border: 1px solid gray; border-radius: 25px;
-          padding: 5px 40px; background: #f3dbdf;"> @Html.ActionLink("Total", "TrainingOverwiew", "GeneralTrainingOverwiew")</span>
-        <span style=" margin-left: 30px;border: 1px solid gray; border-radius: 25px;
-          padding: 5px 20px; background: #f3dbdf;"> @Html.ActionLink("Last 30 days", "TrainingOverwiew30Days", "GeneralTrainingOverwiew")</span>
-        <span style="margin-left: 30px;border: 1px solid gray; border-radius: 25px;
-          padding: 5px 20px;background: #f3dbdf;">@Html.ActionLink("Last 7 days", "TrainingOverwiew7Days", "GeneralTrainingOverwiew")</span>
-        <span style="font-weight:bold; font-size:22px; color: gray; float: right;"> @Model.Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Sum(m => m.Distance) KM</span>
+    <span style="font-weight:bold; font-size:22px; color: gray;margin-left: 10px;">
+         @Model.Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Count()  MOVES 
+    </span>
+    <span style="font-weight:bold; font-size:22px; color: gray; margin-left: 50px;">
+         @Model.Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Sum(m => m.Duration) MIN
+    </span>
+    <span style=" margin-left: 105px;border: 1px solid gray; border-radius: 25px; padding: 5px 40px; background: #f3dbdf;"> 
+         @Html.ActionLink("Total", "TrainingOverwiew", "GeneralTrainingOverwiew")
+    </span>
+    <span style=" margin-left: 30px;border: 1px solid gray; border-radius: 25px; padding: 5px 20px; background: #f3dbdf;">
+         @Html.ActionLink("Last 30 days", "TrainingOverwiew30Days", "GeneralTrainingOverwiew")
+    </span>
+    <span style="margin-left: 30px;border: 1px solid gray; border-radius: 25px; padding: 5px 20px;background: #f3dbdf;">
+         @Html.ActionLink("Last 7 days", "TrainingOverwiew7Days", "GeneralTrainingOverwiew")
+    </span>
+    <span style="font-weight:bold; font-size:22px; color: gray; float: right;">
+         @Model.Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Sum(m => m.Distance) KM
+    </span>
     </p>
-    <br />
-    <br />
-    <br />
-    <br />
-    <table class="table" style="text-align:center; color:red; font-weight:bold">
+    <br /> <br /> <br /> <br />
+    <table class="table" style="text-align:center; font-weight:bold">
         <tr style="color:forestgreen">
             <th>
                 <h5></h5>
@@ -31,9 +37,7 @@
             </th>
             <th>
                 <h5 style="text-align:center;font-weight:bold">Total duration(min)</h5>
-            </th>
-            <td>
-            </td>
+            </th><td></td>
             <th>
                 <h5 style="text-align: center;font-weight:bold">Max distance(km)</h5>
             </th>
@@ -53,9 +57,7 @@
             </td>
             <td>
                 @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Running).Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Sum(p => p.Duration)
-            </td>
-            <td>
-            </td>
+            </td>  <td> </td>
             <td>
                 @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Running).Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Max(p => p.Distance)
             </td>
@@ -75,9 +77,7 @@
             </td>
             <td>
                 @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Bicycle).Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Sum(p => p.Duration)
-            </td>
-            <td>
-            </td>
+            </td> <td> </td>
             <td>
                 @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Bicycle).Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Max(p => p.Distance)
             </td>
@@ -97,9 +97,7 @@
             </td>
             <td>
                 @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Swimming).Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Sum(p => p.Duration)
-            </td>
-            <td>
-            </td>
+            </td> <td></td>
             <td>
                 @Model.Where(d => d.KindOfSports == TriathlonTrainingsWebApp.Models.KindOfSports.Swimming).Where(d => d.CurrentDate.Date > DateTime.Now.AddDays(-30)).Max(p => p.Distance)
             </td>

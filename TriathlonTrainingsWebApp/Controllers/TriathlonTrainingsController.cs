@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web.Mvc;
 using TriathlonTrainingsWebApp.Models;
-using System.Linq;
 
 namespace TriathlonTrainingsWebApp.Controllers
 {
@@ -18,20 +17,8 @@ namespace TriathlonTrainingsWebApp.Controllers
         {
             return View(await db.TriathlonActivities.ToListAsync());
         }
-        public async Task<ActionResult> KindOfSport(int? distance)
-        {
-            if (distance == null)
-            {
-                return HttpNotFound();
-            }
-            TriathlonTraining kindOfActivity = await db.TriathlonActivities.FirstOrDefaultAsync(n => n.Distance < distance);
 
-            if (kindOfActivity == null)
-            {
-                return HttpNotFound();
-            }
-            return View(kindOfActivity);
-        }
+
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
