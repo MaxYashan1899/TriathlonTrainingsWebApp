@@ -18,7 +18,7 @@ namespace TriathlonTrainingsWebApp.Controllers
         // GET: MyCompetitions
         public async Task<ActionResult> Competitions(MyCompetition myCompetition)
         {
-            myCompetition.Date = myCompetition.Date.Date;
+            //myCompetition.Date = myCompetition.Date.Date;
             
             return View(await db.MyCompetitions.ToListAsync());
         }
@@ -67,7 +67,7 @@ namespace TriathlonTrainingsWebApp.Controllers
         // Дополнительные сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,Date,Distance,Description,DaysLeft")] MyCompetition myCompetition)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,Date,Distance,Description,Link,DaysLeft")] MyCompetition myCompetition)
         {
             if (ModelState.IsValid)
             {
