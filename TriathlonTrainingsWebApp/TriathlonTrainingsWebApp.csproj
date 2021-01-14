@@ -171,7 +171,8 @@
     <Compile Include="Controllers\GeneralTrainingOverwiewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TriathlonTrainingsController.cs" />
+    <Compile Include="App_Start\TriathlonTrainingsController.cs" />
+    <Compile Include="Controllers\MyCompetitionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,10 +188,55 @@
     <Compile Include="Migrations\202012181644083_MigrateDB2.Designer.cs">
       <DependentUpon>202012181644083_MigrateDB2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101140930113_MigrateDB22.cs" />
+    <Compile Include="Migrations\202101140930113_MigrateDB22.Designer.cs">
+      <DependentUpon>202101140930113_MigrateDB22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101140931208_MigrateDB221.cs" />
+    <Compile Include="Migrations\202101140931208_MigrateDB221.Designer.cs">
+      <DependentUpon>202101140931208_MigrateDB221.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101140955338_MigrateDB3.cs" />
+    <Compile Include="Migrations\202101140955338_MigrateDB3.Designer.cs">
+      <DependentUpon>202101140955338_MigrateDB3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141003012_MigrateDB31.cs" />
+    <Compile Include="Migrations\202101141003012_MigrateDB31.Designer.cs">
+      <DependentUpon>202101141003012_MigrateDB31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141005131_MigrateDB4.cs" />
+    <Compile Include="Migrations\202101141005131_MigrateDB4.Designer.cs">
+      <DependentUpon>202101141005131_MigrateDB4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141006543_MigrateDB5.cs" />
+    <Compile Include="Migrations\202101141006543_MigrateDB5.Designer.cs">
+      <DependentUpon>202101141006543_MigrateDB5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141016375_MigrateDB6.cs" />
+    <Compile Include="Migrations\202101141016375_MigrateDB6.Designer.cs">
+      <DependentUpon>202101141016375_MigrateDB6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141038010_MigrateDB7.cs" />
+    <Compile Include="Migrations\202101141038010_MigrateDB7.Designer.cs">
+      <DependentUpon>202101141038010_MigrateDB7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141152155_MigrateDB9.cs" />
+    <Compile Include="Migrations\202101141152155_MigrateDB9.Designer.cs">
+      <DependentUpon>202101141152155_MigrateDB9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141203223_MigrateDB10.cs" />
+    <Compile Include="Migrations\202101141203223_MigrateDB10.Designer.cs">
+      <DependentUpon>202101141203223_MigrateDB10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141205118_MigrateDB11.cs" />
+    <Compile Include="Migrations\202101141205118_MigrateDB11.Designer.cs">
+      <DependentUpon>202101141205118_MigrateDB11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MyCompetition.cs" />
     <Compile Include="Models\TriathlonContext.cs" />
     <Compile Include="Models\TriathlonDbInitializer.cs" />
     <Compile Include="Models\TriathlonTraining.cs" />
@@ -208,6 +254,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -261,6 +309,10 @@
     <Content Include="Views\GeneralTrainingOverwiew\TrainingOverwiew.cshtml" />
     <Content Include="Views\GeneralTrainingOverwiew\TrainingOverwiew7Days.cshtml" />
     <Content Include="Views\GeneralTrainingOverwiew\TrainingOverwiew30Days.cshtml" />
+    <Content Include="Views\MyCompetitions\Create.cshtml" />
+    <Content Include="Views\MyCompetitions\Delete.cshtml" />
+    <Content Include="Views\MyCompetitions\Edit.cshtml" />
+    <Content Include="Views\MyCompetitions\Competitions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -288,6 +340,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012181644083_MigrateDB2.resx">
       <DependentUpon>202012181644083_MigrateDB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101140930113_MigrateDB22.resx">
+      <DependentUpon>202101140930113_MigrateDB22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101140931208_MigrateDB221.resx">
+      <DependentUpon>202101140931208_MigrateDB221.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101140955338_MigrateDB3.resx">
+      <DependentUpon>202101140955338_MigrateDB3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141003012_MigrateDB31.resx">
+      <DependentUpon>202101141003012_MigrateDB31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141005131_MigrateDB4.resx">
+      <DependentUpon>202101141005131_MigrateDB4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141006543_MigrateDB5.resx">
+      <DependentUpon>202101141006543_MigrateDB5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141016375_MigrateDB6.resx">
+      <DependentUpon>202101141016375_MigrateDB6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141038010_MigrateDB7.resx">
+      <DependentUpon>202101141038010_MigrateDB7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141152155_MigrateDB9.resx">
+      <DependentUpon>202101141152155_MigrateDB9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141203223_MigrateDB10.resx">
+      <DependentUpon>202101141203223_MigrateDB10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141205118_MigrateDB11.resx">
+      <DependentUpon>202101141205118_MigrateDB11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

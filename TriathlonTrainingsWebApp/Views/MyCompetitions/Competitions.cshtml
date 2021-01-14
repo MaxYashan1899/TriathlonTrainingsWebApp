@@ -1,0 +1,59 @@
+﻿@model IEnumerable<TriathlonTrainingsWebApp.Models.MyCompetition>
+
+@{
+    ViewBag.Title = "Planned competitions";
+}
+
+    <h2 style="text-align:center; font-weight: bold">Planned competitions @DateTime.Now.Year</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th style="text-align: center;">
+            @Html.DisplayNameFor(model => model.Distance)
+        </th>
+        <th style="text-align: center;">
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th style="text-align: center;">
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th style="text-align: center;">
+            @Html.DisplayNameFor(model => model.DaysLeft)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td style="font-weight: bold">
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td style="text-align:center">
+        @Html.DisplayFor(modelItem => item.Distance)
+    </td>
+    <td style="text-align:center">
+        @Html.DisplayFor(modelItem => item.Date.Day).
+        @Html.DisplayFor(modelItem => item.Date.Month).
+        @Html.DisplayFor(modelItem => item.Date.Year)
+    </td>
+    <td style="text-align:center">
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td style="color:red;text-align:center;">
+        @Html.DisplayFor(modelItem => item.DaysLeft)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>
+<button style="float:right; background-color: yellow;font-weight: bold; width:100px; height:30px; ">
+        @Html.ActionLink("+ ADD NEW", "Create")
+</button>
